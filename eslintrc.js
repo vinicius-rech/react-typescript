@@ -10,11 +10,12 @@ module.exports = {
   overrides: [
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: 'ESNEXT',
     sourceType: 'module'
   },
   plugins: [
-    'react'
+    'react',
+    'vite'
   ],
   rules: {
   }
