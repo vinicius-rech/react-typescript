@@ -1,12 +1,13 @@
 # :computer: Projeto
 
 Descrição
-
+    Aplicativo responsivo para o controle de tarefas pessoal.
 ---
 
 ## :dart: Objetivo do projeto
 
 Objetivo
+Controle de tarefas (TodoList).
 
 ## :rocket: Tecnologias utilizadas
 
@@ -31,6 +32,10 @@ Objetivo
     ```
 - Para watch dev:
     ```sh
-    $ #
+    $ # yarn dev
+    ```
+- Para watch dev em LAN:
+    ```sh
+    $ # yarn dev --host
     ```
 ---
