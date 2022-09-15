@@ -13,7 +13,7 @@ Objetivo
 - [TypeScript](https://www.typescriptlang.org/)
 - [ReactJs](https://nestjs.com/)
 - [Vite](https://vitejs.dev/guide/)
-- [Styled Components](https://styled-components.com/)
+- [MUI](https://mui.com/pt/material-ui/getting-started/installation/)
 
 ## :arrow_forward: Rodar o projeto
 
