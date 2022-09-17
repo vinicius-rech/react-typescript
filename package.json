@@ -5,6 +5,7 @@
   "type": "module",
   "homepage": "https://www.vinicius-rech.dev/",
   "scripts": {
+    "start": "npx http-server ./dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
