@@ -1,8 +1,8 @@
 import {API} from "./api.service";
 import {AxiosInstance, AxiosResponse} from "axios";
 
-const taskRoutes = {
-  create: '/task'
+const endpoints = {
+  create: '/task/new'
 }
 
 class Task {
@@ -12,8 +12,14 @@ class Task {
     this.api = API()
   }
 
-  create(task: Task) {
-    return this.api.post<AxiosResponse<Task>>(taskRoutes.create, task)
+  async create(description: string) {
+    await this.api.post<AxiosResponse>(endpoints.create, {description})
+      .then((response:AxiosResponse) => {
+        console.log('resposta: ', response)
+      })
+      .catch((error) => {
+        console.log('error',error)
+      })
   }
 }
 

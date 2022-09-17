@@ -1,9 +1,12 @@
 import axios from "axios";
 
-const defaultConfig = {
-  baseURL: process.env.API_BASE_URL,
-  headers: {'Content-Type': 'application/json'}
+const baseURL = "https://api-nest-production.up.railway.app"
+const headers = {
+  'Content-Type': 'application/json;charset=utf-8',
+  "Access-Control-Allow-Origin": "*",
 }
+
+const defaultConfig = {baseURL, headers}
 
 export const API = (axiosConfig?: any) => axios.create(axiosConfig || defaultConfig)
 

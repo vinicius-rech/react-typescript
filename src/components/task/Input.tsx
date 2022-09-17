@@ -1,23 +1,33 @@
 import {TextField} from "@mui/material";
 import React from "react";
+import Task from "../../services/task.service";
 
 export const Input = () => {
   const [taskDescription, setTaskDescription] = React.useState('')
 
-  const isEmptyField = (text: string): boolean => text === '' ? true : false
+  const isEmptyField = (text: string): boolean => text === ''
 
   const dispatchAlert = () => {
     console.log('campo vazio')
   }
 
-  const validateEmptyField = (text: string) =>
-    isEmptyField(text) ? dispatchAlert() : setTaskDescription(text)
+  const isValidEmptyField = (text: string) => {
+    if(isEmptyField(text)) {
+      dispatchAlert()
+      return false
+    }
+    setTaskDescription(text)
+    return true
+  }
 
 
-  const onKeyPressed = (_onKeyDown: React.KeyboardEvent<HTMLDivElement>) => {
+  const onKeyPressed = async (_onKeyDown: React.KeyboardEvent<HTMLDivElement>) => {
     const target = _onKeyDown.target as HTMLInputElement
     if (_onKeyDown.code == 'Enter') {
-      validateEmptyField(target.value)
+      const task = new Task()
+      if(isValidEmptyField(target.value)) {
+        await task.create(target.value)
+      }
     }
   }
 
