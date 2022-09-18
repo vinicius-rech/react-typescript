@@ -1,6 +1,3 @@
-export type Task = {
-  id?: number
-  title?: string
-  status?: string | 'todo'
+export type TaskProps = {
   description?: string | null
 }

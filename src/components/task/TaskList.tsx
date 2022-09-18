@@ -1,19 +1,27 @@
 import {Checkbox, Paper, Typography, Unstable_Grid2 as Grid} from "@mui/material";
-import {Menu} from "@mui/icons-material";
 import React from "react";
+import {useTask} from "../../hooks/useTask";
+import {SingleTaskProps} from "../../hooks/useTask";
 
 export const TaskList = () => {
-  return (
-    <Grid>
-      <Paper variant={'outlined'} sx={{padding: 1}}>
-        <section style={{display: 'grid', gridTemplateColumns: '.1fr 10fr .1fr', alignItems: 'center'}}>
-          <Checkbox size="small"/>
-          <Typography>
-            testando uma tarefa
-          </Typography>
-          <Menu/>
-        </section>
-      </Paper>
-    </Grid>
-  )
+  const {listing, skeleton} = useTask()
+
+  return listing.isLoading
+    ? skeleton.showSkeleton
+    : (
+      <Grid>
+        {listing.tasks.all && listing.tasks.all.map((task: SingleTaskProps, index) => {
+          return (
+            <Paper key={index} variant={'outlined'} sx={{padding: 1}}>
+              <section style={{display: 'grid', gridTemplateColumns: '.1fr 10fr .1fr', alignItems: 'center'}}>
+                <Checkbox size="small"/>
+                <Typography>
+                  {task.description}
+                </Typography>
+              </section>
+            </Paper>
+          )
+        })}
+      </Grid>
+    )
 }
