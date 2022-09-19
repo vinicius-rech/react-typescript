@@ -14,18 +14,12 @@ class Task {
     this.api = API
   }
 
-  async create(task: TaskProps) {
-    await this.api.post<AxiosResponse>(endpoints.create, task.description)
-      .then((response: AxiosResponse) => {
-        console.log('resposta: ', response)
-      })
-      .catch((error) => {
-        console.log('error',error)
-      })
+  async create(task: TaskProps): Promise<AxiosResponse> {
+    return await this.api.post(endpoints.create, task.description)
   }
 
-  async listAll() {
-    return await this.api.get<AxiosResponse<[]>>(endpoints.listAll)
+  async listAll(): Promise<AxiosResponse> {
+    return await this.api.get<AxiosResponse<[{}]>>(endpoints.listAll)
   }
 }
 

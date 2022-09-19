@@ -8,8 +8,8 @@ import {
 import React from "react"
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import {Input} from "./Input";
-import {TaskList} from "./TaskList";
 import {colors} from "../../global/colors";
+import {TaskList} from "./TaskList";
 
 export const Task = () => {
   return (
