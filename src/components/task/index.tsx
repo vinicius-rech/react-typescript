@@ -18,7 +18,7 @@ export const Task = () => {
         <Grid container direction='column' rowGap={1}>
           asd
           {/*<Input/>*/}
-          {/*<TaskList/>*/}
+          <TaskList/>
         </Grid>
 
       </Container>

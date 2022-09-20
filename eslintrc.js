@@ -27,5 +27,7 @@ module.exports = {
     'vite'
   ],
   rules: {
+    "no-unused-vars": "off",
+    "no-restricted-imports": "off"
   }
 }
