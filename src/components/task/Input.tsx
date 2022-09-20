@@ -20,11 +20,6 @@ export const Input = () => {
       .finally(() => text.current.value = '')
   }
 
-  // @todo clean up
-  React.useEffect(() => {
-    console.log(text)
-  }, [text])
-
   return (
     <TextField fullWidth={true}
                sx={{marginTop: 2}}
