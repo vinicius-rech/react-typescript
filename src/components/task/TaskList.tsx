@@ -8,7 +8,7 @@ import React from "react";
 import {TaskProps} from "../../global/types";
 import {Check, RadioButtonUnchecked} from "@mui/icons-material";
 import {colors} from "../../global/colors";
-import {deleteTask, fetchTasks, TaskInitialState} from "../../features/task/taskSlice";
+import {deleteTask, fetchTasks} from "../../features/task/taskSlice";
 import {useAppDispatch, useAppSelector} from "../../hooks/hooks";
 
 

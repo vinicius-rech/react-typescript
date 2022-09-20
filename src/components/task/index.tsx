@@ -16,8 +16,7 @@ export const Task = () => {
     <React.Fragment>
       <Container maxWidth='lg'>
         <Grid container direction='column' rowGap={1}>
-          asd
-          {/*<Input/>*/}
+          <Input/>
           <TaskList/>
         </Grid>
 

@@ -36,8 +36,9 @@ export const useTask = () => {
   const _onKeyPressed = async (_onKeyDown: React.KeyboardEvent<HTMLDivElement>) => {
     const target = _onKeyDown.target as HTMLInputElement
     if (_onKeyDown.code == 'Enter' || _onKeyDown.code === 'NumpadEnter' && target.value.length > 0) {
-      await createTask(target.value)
-      target.value = ''
+      await createTask(target.value).finally(() => {
+        target.value = ''
+      })
     }
   }
 
