@@ -1,28 +1,26 @@
 import {TextField} from "@mui/material";
 import React from "react";
-import {useTask} from "../../hooks/useTask";
 import {addTask} from "../../features/task/taskSlice"
 import {useAppDispatch} from "../../hooks/hooks";
 
 export const Input = () => {
   const dispatch = useAppDispatch()
   const text = React.useRef<any>(null)
-  const keys = {
-    enter: 'Enter',
-    numpadEnter: 'NumpadEnter'
-  }
+  const keys = {enter: 'Enter', numpadEnter: 'NumpadEnter'}
 
+  // @todo melhorar o retorno
   const isEnterKeyPressed = (key: React.KeyboardEvent<HTMLInputElement>) => {
-    let isEnterKey: boolean = key.code === keys.numpadEnter ? true : false
-    return isEnterKey = key.code === keys.enter ? true : false
+    let isEnterKey: boolean = key.code === keys.numpadEnter || key.code === keys.enter
+    return isEnterKey
   }
 
   const handleKeyDown = (keyPressed: React.KeyboardEvent<HTMLInputElement>) => {
     isEnterKeyPressed(keyPressed)
-    && dispatch(addTask({description: String(text)}))
+    && dispatch(addTask({description: String(text.current.value)}))
       .finally(() => text.current.value = '')
   }
 
+  // @todo clean up
   React.useEffect(() => {
     console.log(text)
   }, [text])

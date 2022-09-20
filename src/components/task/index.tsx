@@ -10,8 +10,17 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import {Input} from "./Input";
 import {colors} from "../../global/colors";
 import {TaskList} from "./TaskList";
+import {useAppSelector} from "../../hooks/hooks";
+
 
 export const Task = () => {
+  const hasSelectedTask = useAppSelector((state) => state.tasks.hasSelectedTask)
+  const tasksToBeDeleted = useAppSelector((state) => state.tasks.toBeDeleted)
+
+  React.useEffect(() => {
+    console.log('has? ', hasSelectedTask)
+  }, [hasSelectedTask])
+
   return (
     <React.Fragment>
       <Container maxWidth='lg'>
@@ -21,17 +30,20 @@ export const Task = () => {
         </Grid>
 
       </Container>
-      {/*<SpeedDial*/}
-      {/*  ariaLabel="SpeedDial basic example"*/}
-      {/*  sx={{position: 'absolute', bottom: 16, right: 16}}*/}
-      {/*  icon={<SpeedDialIcon/>}*/}
-      {/*>*/}
-      {/*  <SpeedDialAction*/}
-      {/*    key={"Nova tarefa"}*/}
-      {/*    icon={<DeleteForeverIcon sx={{color: colors.grenadier}}/>}*/}
-      {/*    tooltipTitle={"limpar tarefas"}*/}
-      {/*  />*/}
-      {/*</SpeedDial>*/}
+      {tasksToBeDeleted.length > 0 && (
+        <SpeedDial
+          ariaLabel="SpeedDial basic example"
+          sx={{position: 'absolute', bottom: 16, right: 16}}
+          icon={<SpeedDialIcon/>}
+        >
+          <SpeedDialAction
+            key={"Nova tarefa"}
+            icon={<DeleteForeverIcon sx={{color: colors.grenadier}}/>}
+            tooltipTitle={"limpar tarefas"}
+          />
+        </SpeedDial>
+      )}
+
     </React.Fragment>
   )
 }
