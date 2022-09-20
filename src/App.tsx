@@ -4,9 +4,5 @@ import React from "react";
 import {Task} from "./components/task";
 
 export default function App() {
-  return (
-    <main style={mainContainer}>
-      <Task/>
-    </main>
-  )
+  return <Task/>
 }

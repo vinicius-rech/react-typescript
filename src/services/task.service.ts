@@ -4,6 +4,7 @@ import {TaskProps} from "../global/types";
 
 const endpoints = {
   create: '/task/new',
+  delete: '/task/delete',
   listAll: 'task/all'
 }
 
@@ -15,7 +16,11 @@ class Task {
   }
 
   async create(task: TaskProps): Promise<AxiosResponse> {
-    return await this.api.post(endpoints.create, task.description)
+    return await this.api.post(endpoints.create, task)
+  }
+
+  async delete(id: string): Promise<AxiosResponse> {
+    return await this.api.delete(`${endpoints.delete}/${id}`)
   }
 
   async listAll(): Promise<AxiosResponse> {

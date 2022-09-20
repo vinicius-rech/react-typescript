@@ -16,22 +16,23 @@ export const Task = () => {
     <React.Fragment>
       <Container maxWidth='lg'>
         <Grid container direction='column' rowGap={1}>
-          <Input/>
-          <TaskList/>
+          asd
+          {/*<Input/>*/}
+          {/*<TaskList/>*/}
         </Grid>
 
       </Container>
-      <SpeedDial
-        ariaLabel="SpeedDial basic example"
-        sx={{position: 'absolute', bottom: 16, right: 16}}
-        icon={<SpeedDialIcon/>}
-      >
-        <SpeedDialAction
-          key={"Nova tarefa"}
-          icon={<DeleteForeverIcon sx={{color: colors.grenadier}}/>}
-          tooltipTitle={"limpar tarefas"}
-        />
-      </SpeedDial>
+      {/*<SpeedDial*/}
+      {/*  ariaLabel="SpeedDial basic example"*/}
+      {/*  sx={{position: 'absolute', bottom: 16, right: 16}}*/}
+      {/*  icon={<SpeedDialIcon/>}*/}
+      {/*>*/}
+      {/*  <SpeedDialAction*/}
+      {/*    key={"Nova tarefa"}*/}
+      {/*    icon={<DeleteForeverIcon sx={{color: colors.grenadier}}/>}*/}
+      {/*    tooltipTitle={"limpar tarefas"}*/}
+      {/*  />*/}
+      {/*</SpeedDial>*/}
     </React.Fragment>
   )
 }
