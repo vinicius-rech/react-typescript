@@ -16,6 +16,8 @@ Controle de tarefas (TodoList).
 - [ReactJs](https://nestjs.com/)
 - [Vite](https://vitejs.dev/guide/)
 - [MUI](https://mui.com/pt/material-ui/getting-started/installation/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+
 
 ## :arrow_forward: Rodar o projeto
 
